@@ -1,0 +1,26 @@
+{
+  "name": "full-calender",
+  "authors": [
+    "Ghayyas <ghayyasmubashir@gmail.com>"
+  ],
+  "description": "full calender Api using angularjs",
+  "main": "",
+  "moduleType": [],
+  "keywords": [
+    "full",
+    "calender"
+  ],
+  "license": "MIT",
+  "homepage": "index.html",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-ui-calendar": "^1.0.1"
+  }
+}

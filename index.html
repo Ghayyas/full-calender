@@ -5,13 +5,27 @@
     <title>Full Calender</title>
 
 <link rel="stylesheet" href="bower_components/fullcalendar/dist/fullcalendar.css"/>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 <!-- jquery, moment, and angular have to get included before fullcalendar -->
-<script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <!--Boot Box BootStrap-->
+
 <script type="text/javascript" src="bower_components/moment/min/moment.min.js"></script>
 <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
 <script type="text/javascript" src="bower_components/angular-ui-calendar/src/calendar.js"></script>
 <script type="text/javascript" src="bower_components/fullcalendar/dist/fullcalendar.min.js"></script>
 <script type="text/javascript" src="bower_components/fullcalendar/dist/gcal.js"></script>
+
+
 </head>
 <script>
   angular.module('App', ['ui.calendar'])
@@ -21,11 +35,16 @@ function CalendarCtrl() {
 $(document).ready(function() {
 		
 		$('#calendar').fullCalendar({
+         
+ 
 			header: {
 				left: 'prev,next today',
 				center: 'title',
-				right: 'month,agendaWeek,agendaDay'
+				right: 'month,agendaWeek,agendaDay,setting'
+                
+
 			},
+
 			defaultDate: Date.now(),
 			editable: true,
 			eventLimit: true, // allow "more" link when too many events
@@ -90,15 +109,124 @@ $(document).ready(function() {
 	})
 }
 </script>
-<body>
-	<div id='calendar'></div>
 
+<style type='text/css'>
+
+	body {
+		margin-top: 40px;
+		text-align: center;
+		font-size: 14px;
+		font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
+	}
+
+	#calendar {
+		width: 900px;
+		margin: -5px 27px;
+	}
+ 
+   .top{
+     position: absolute;
+
+   }
+   .btn-1{
+    position: relative;
+    margin-top: -1px;
+    margin-left: 923px;
+}
+   .tim{
+   margin-right: -208;
+   }
+
+ 
+</style>
+<body>
+	<div id='calendar' class="top"></div>
     
 
-</div> 
+<button class="btn-1" data-toggle="modal" data-target="#myModal"><i class="fa fa-cog"></i></button>
+
+<!-- <div class="container">
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+         <i class="fa fa-cog pull-left"></i>
+        </div>
+
+        
+        <div class="modal-body">
+            
+<form role="form">
+    <div class="form-group">
+      <label for="sel1" class="pull-left">Timezone</label>
+      <select class="form-control" id="sel1">
+        <option>Luxembourg</option>
+        <option>Pakistan</option>
+        <option>India</option>
+        <option>America</option>
+      </select>
+
+    </div>
+
+        
+    <div class="form-group">
+        <div class="pull-left"> 
+      <input type="checkbox">Update timezone automatically.
+      </div>
+
+    </div>
+
+
+
+      </form>
+<br/>
+<br/>
+<form role="form">
+    <div class="form-group">
+      <label for="sel1" class="pull-left tim">Time format</label>
+      <select class="form-control" id="sel1">
+        <option>24h</option>
+        <option>12h</option>
+
+      </select>
+
+    </div>
+</form>
+
+
+<form role="form">
+    <div class="form-group">
+      <label for="sel1" class="pull-left tim">Start week on</label>
+      <select class="form-control" id="sel1">
+        <option>Monday</option>
+        <option>Tuesday</option>
+        <option value="">Wednesday</option>
+        <option value="">Thursday</option>
+        <option value="">Friday</option>
+        <option value="">Satarday</option>
+        <option value="">Sunday</option>
+
+      </select>
+
+    </div>
+</form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>  
+    </div>
+  </div>
+
+
    
-
-
 
     
 </body>
